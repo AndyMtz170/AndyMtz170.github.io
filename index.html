@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV – Andy Mtz</title>
+  <style>
+    :root{
+      --bg:#0f172a;          /* fondo oscuro */
+      --card:#0b1227;        /* tarjetas */
+      --muted:#94a3b8;       /* texto secundario */
+      --pri:#22c55e;         /* acento principal */
+      --pri-weak:#16a34a;    /* acento más oscuro */
+      --txt:#e2e8f0;         /* texto base */
+      --chip:#1f2937;        /* chips */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--txt); background:radial-gradient(1200px 800px at 80% -10%, #172554 0%, rgba(23,37,84,0) 60%), var(--bg);
+    }
+    .wrap{max-width:1000px; margin:40px auto; padding:24px}
+    .grid{display:grid; grid-template-columns:320px 1fr; gap:24px}
+
+    /* HEADER */
+    .hero{grid-column:1/-1; display:grid; grid-template-columns:320px 1fr; gap:24px; align-items:stretch}
+    .id{background:linear-gradient(160deg, #0b1227, #0b1227 60%, rgba(34,197,94,0.08)); border:1px solid rgba(148,163,184,.15); border-radius:20px; padding:24px; display:flex; flex-direction:column; gap:16px}
+    .avatar{width:110px; height:110px; border-radius:16px; background:#111827; border:2px solid rgba(148,163,184,.25); object-fit:cover}
+    .name{font-size:28px; font-weight:700}
+    .role{color:var(--muted)}
+    .links{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{padding:8px 10px; background:var(--chip); color:#cbd5e1; border:1px solid rgba(148,163,184,.15); border-radius:999px; text-decoration:none; font-size:14px}
+    .chip:hover{border-color:rgba(148,163,184,.35)}
+
+    .summary{background:linear-gradient(160deg, rgba(34,197,94,.12), rgba(34,197,94,.05)); border:1px solid rgba(34,197,94,.25); border-radius:20px; padding:24px}
+    .summary h2{margin:0 0 8px; font-size:18px; letter-spacing:.3px; color:#86efac}
+    .summary p{margin:0; color:#d1fae5}
+
+    /* LAYOUT COLUMNS */
+    aside{display:flex; flex-direction:column; gap:16px}
+    .card{background:var(--card); border:1px solid rgba(148,163,184,.15); border-radius:16px; padding:18px}
+    .card h3{margin:0 0 8px; font-size:14px; text-transform:uppercase; letter-spacing:.12em; color:#93c5fd}
+    .list{display:flex; flex-direction:column; gap:10px}
+
+    .skillset{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{padding:6px 10px; background:#0f1a33; border:1px solid rgba(148,163,184,.15); border-radius:10px; font-size:13px}
+    .bar{height:8px; background:#0f1a33; border:1px solid rgba(148,163,184,.15); border-radius:999px; overflow:hidden}
+    .bar > i{display:block; height:100%; background:linear-gradient(90deg, var(--pri), var(--pri-weak)); width:70%}
+
+    /* TIMELINE */
+    .section{background:var(--card); border:1px solid rgba(148,163,184,.15); border-radius:16px; padding:18px}
+    .section h2{margin:0 0 8px; font-size:18px}
+    .item{display:grid; grid-template-columns:140px 1fr; gap:16px; padding:14px 0; border-top:1px dashed rgba(148,163,184,.2)}
+    .item:first-child{border-top:none}
+    .when{color:var(--muted); font-size:14px}
+    .what{display:flex; flex-direction:column; gap:4px}
+    .what .title{font-weight:600}
+    .what .place{color:#93c5fd}
+    .what ul{margin:6px 0 0 18px}
+
+    /* FOOTER */
+    .footer{margin:18px 0; color:var(--muted); font-size:12px; text-align:center}
+
+    /* RESPONSIVE */
+    @media (max-width:900px){
+      .grid, .hero{grid-template-columns:1fr}
+      .item{grid-template-columns:1fr}
+    }
+
+    /* PRINT */
+    @media print{
+      :root{--bg:#fff; --card:#fff; --txt:#111827; --muted:#475569}
+      body{background:#fff}
+      .wrap{margin:0; padding:0}
+      .chip,.tag{border-color:#e5e7eb !important}
+      .summary{border-color:#a7f3d0 !important}
+      .footer{display:none}
+      @page{size:A4; margin:12mm}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <section class="id">
+        <!-- FOTO (opcional): reemplaza src por tu foto cuadrada 1:1 -->
+        <img class="avatar" src="C:\Users\w\Desktop\CV_Andy\Foto de andy.jpeg" alt="Foto de andy.jpeg" />
+        <div>
+          <div class="name">Andy Alexnder Martinez Galvan </div>
+          <div class="role">Cientifico de Datos | Desarrollador Full Stack</div>
+        </div>
+        <div class="links">
+          <!-- Reemplaza links; quita los que no uses -->
+          <a class="chip" href="mailto:andygeorgia3@gmail.com">andygeorgia3@gmail.com</a>
+          <a class="chip" href="https://www.linkedin.com/in/andy-martinez-81a2972b0/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="chip" href="https://github.com/AndyMtz170" target="_blank" rel="noreferrer">GitHub</a>
+          <span class="chip">Monterrey, Mexico</span>
+        </div>
+      </section>
+
+      <section class="summary">
+        <h2>Perfil</h2>
+        <p>
+          <!-- ESCRIBE AQUÍ UN RESUMEN DE 3–4 LÍNEAS: años de experiencia, tu propuesta de valor, logros clave y stack principal. -->
+          Analista de Datos con dominio en Python, SQL y Power BI, especializado en transformar datos en información útil mediante análisis y visualizaciones interactivas.
+Desarrollador Full Stack con experiencia en HTML, CSS, JavaScript, Node.js y SQL Server, creando aplicaciones completas y seguras.
+Capaz de integrar frontend, backend y bases de datos, aplicando buenas prácticas, control de versiones y despliegue en la nube.
+        </p>
+      </section>
+    </header>
+
+    <main class="grid" role="main">
+      <aside>
+        <section class="card">
+          <h3>Habilidades</h3>
+          <div class="skillset">
+            <!-- AGREGA/QUITA TAGS -->
+            <span class="tag">HTML</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Power BI</span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Competencias</h3>
+          <div class="list">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center">
+                <span>Comunicación</span><span class="when">Avanzado</span>
+              </div>
+              <div class="bar"><i style="width:85%"></i></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center">
+                <span>Gestión de proyectos</span><span class="when">Intermedio</span>
+              </div>
+              <div class="bar"><i style="width:70%"></i></div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center">
+                <span>Inglés</span><span class="when">B2</span>
+              </div>
+              <div class="bar"><i style="width:65%"></i></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Educación</h3>
+          <div class="list">
+            <!-- DUPLICA .edu SEGÚN NECESITES -->
+            <div class="edu">
+              <div class="title"><strong>Licenciatura en Ingenieria en Desarrollo y Gestion de Software Multiplataforma</strong></div>
+              <div class="place">Universidad Tecnologica de Santa Catarina</div>
+              <div class="when">2022 – 2026 | Santa Catarina</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Contactos</h3>
+          <div class="list">
+            <!-- OPCIONAL: referencias o disponibilidad -->
+            <div>Disponibilidad: Inmediata</div>
+            <div>Viaje: Si | Remoto: Sí</div>
+          </div>
+        </section>
+      </aside>
+
+      
+
+  </div>
+</body>
+</html>
